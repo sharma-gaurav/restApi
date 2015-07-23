@@ -7,6 +7,8 @@ class UrlMappings {
             }
         }
 
+        "/customers" (resources: "customer")
+
         "/"(view:"/index")
         "500"(view:'/error')
 	}
