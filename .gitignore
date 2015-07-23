@@ -31,3 +31,12 @@
 
 # "temporary" build files
 /target
+
+restApi.iml
+grailsw
+grailsw.bat
+.project
+.classpath
+wrapper
+.idea
+restApi-grailsPlugins.iml
