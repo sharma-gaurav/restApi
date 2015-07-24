@@ -5,6 +5,8 @@ import grails.converters.JSON
 import grails.converters.XML
 import grails.rest.RestfulController
 
+import static org.springframework.http.HttpStatus.OK
+
 class CustomerController extends RestfulController<Customer> {
     static responseFormats = ['json']
     static namespace = "v1"
@@ -30,6 +32,6 @@ class CustomerController extends RestfulController<Customer> {
     def show() {
         def customer = Customer.get(params.long("id"))
 
-        respond(customer)
+        render( text: customer as JSON, contentType: 'application/json', status: OK )
     }
 }
