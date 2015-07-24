@@ -1,5 +1,6 @@
-package com.intellimeet
+package com.intellimeet.v2
 
+import com.intellimeet.Customer
 import grails.converters.JSON
 import grails.converters.XML
 import grails.rest.RestfulController
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus
 
 class CustomerController extends RestfulController<Customer> {
     static responseFormats = ['json']
+    static namespace = "v2"
 
     CustomerController() {
         super(Customer)
@@ -14,6 +16,7 @@ class CustomerController extends RestfulController<Customer> {
 
     @Override
     def index() {
+        println "This is version 2 controller"
         def customers = Customer.list()
 
         withFormat {

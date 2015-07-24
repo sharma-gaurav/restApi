@@ -7,8 +7,12 @@ class UrlMappings {
             }
         }
 
-        "/customers" (resources: "customer") {
-            "/orders" (resources: "order")
+        "/v1/customers" (resources: "customer", namespace: "v1") {
+            "/orders" (resources: "order", namespace: "v1")
+        }
+
+        "/v2/customers" (resources: "customer", namespace:"v2") {
+            "/orders" (resources: "order", namespace:"v2")
         }
 
         "/"(view:"/index")
