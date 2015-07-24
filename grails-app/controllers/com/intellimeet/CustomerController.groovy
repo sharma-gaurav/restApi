@@ -3,6 +3,7 @@ package com.intellimeet
 import grails.converters.JSON
 import grails.converters.XML
 import grails.rest.RestfulController
+import org.springframework.http.HttpStatus
 
 class CustomerController extends RestfulController<Customer> {
     static responseFormats = ['json']
@@ -21,5 +22,12 @@ class CustomerController extends RestfulController<Customer> {
             xml { render customers as XML }
             '*' { render customers as JSON }
         }
+    }
+
+    @Override
+    def show() {
+        def customer = Customer.get(params.long("id"))
+
+        respond(customer)
     }
 }
