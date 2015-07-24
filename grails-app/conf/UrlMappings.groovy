@@ -7,7 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/customers" (resources: "customer")
+        "/customers" (resources: "customer") {
+            "/orders" (resources: "order")
+        }
 
         "/"(view:"/index")
         "500"(view:'/error')
