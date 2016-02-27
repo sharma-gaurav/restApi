@@ -38,6 +38,6 @@ grailsw.bat
 .project
 .classpath
 wrapper
-.idea
-restApi-grailsPlugins.iml
+.idea/
+*.iml
 test
